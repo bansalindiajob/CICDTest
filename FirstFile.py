@@ -1,7 +1,7 @@
 # factorial.py 
 
 import time
-
+import sys
 final_list = [] 
 
 def factorial(n):
@@ -16,9 +16,9 @@ def factorial(n):
 
     return factorial  
 
-def sum_factorial():  
+def sum_factorial(num):  
 
-    for i in range(50):
+    for i in range(num):
 
         final_list.append(factorial(i)) 
 
@@ -30,5 +30,7 @@ def sum_factorial():
     return result
 
 if __name__ == "__main__": 
-
-    sum_factorial() 
+    if sys.argv[1] != None:
+        sum_factorial(int(sys.argv[1]))
+    else :
+         sum_factorial(50)
